@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2e9" />
+  <title>Coinfolio — OneNote coin album</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">C</div><span>coinfolio</span><span class="addon">ONENOTE ADD-IN</span></div>
+    <div class="top-actions"><span class="saved"><i></i> Saved to this notebook</span><button class="avatar">JL</button></div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="rail">
+      <button class="rail-button active" aria-label="Album" title="Album"><svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H19v16H5.5A1.5 1.5 0 0 1 4 18.5zM8 4v16"/></svg></button>
+      <button class="rail-button" aria-label="Collections" title="Collections"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></button>
+      <div class="rail-spacer"></div><button class="rail-button" title="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1a1.7 1.7 0 0 1-2.4 2.4l-.1-.1a1.7 1.7 0 0 0-2.9 1.2v.2a1.7 1.7 0 0 1-3.4 0v-.2a1.7 1.7 0 0 0-2.9-1.2l-.1.1a1.7 1.7 0 0 1-2.4-2.4l.1-.1a1.7 1.7 0 0 0-1.2-2.9H4a1.7 1.7 0 0 1 0-3.4h.2a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a1.7 1.7 0 0 1 2.4-2.4l.1.1a1.7 1.7 0 0 0 2.9-1.2V2a1.7 1.7 0 0 1 3.4 0v.2a1.7 1.7 0 0 0 2.9 1.2l.1-.1a1.7 1.7 0 0 1 2.4 2.4l-.1.1a1.7 1.7 0 0 0 1.2 2.9h.2a1.7 1.7 0 0 1 0 3.4h-.2a1.7 1.7 0 0 0-1.2 2.9Z"/></svg></button>
+    </aside>
+
+    <section class="workspace">
+      <div class="page-heading"><div><div class="eyebrow">MY COLLECTION <span>·</span> COIN ALBUM</div><h1>World coins <span class="edit-icon">↗</span></h1><p class="subtitle">A little history, kept close.</p></div><button class="primary-button" id="insertPage"><span>＋</span> Insert into OneNote</button></div>
+
+      <nav class="ribbon" aria-label="Insert ribbon">
+        <div class="ribbon-tabs"><button>Home</button><button class="selected">Insert</button><button>View</button><span class="ribbon-context">OneNote · My Notebook</span></div>
+        <div class="ribbon-tools">
+          <button class="tool-button current"><span class="tool-icon coin-icon">◉</span><span>Coin page</span></button>
+          <span class="tool-divider"></span>
+          <button class="tool-button" id="addCoin"><span class="tool-icon plus-icon">＋</span><span>Add sleeve</span></button>
+          <button class="tool-button" id="addNote"><span class="tool-icon note-icon">▤</span><span>Collection note</span></button>
+          <button class="tool-button" id="exportPage"><span class="tool-icon export-icon">↥</span><span>Export page</span></button>
+          <div class="ribbon-hint">Insert a coin album page into your notebook</div>
+        </div>
+      </nav>
+
+      <div class="content-area">
+        <div class="album-toolbar"><div class="page-meta"><span class="page-number">01</span><div><strong>European circulation</strong><span>6 sleeves <b>·</b> Started 2024</span></div></div><div class="view-actions"><button id="layoutToggle" class="view-toggle" title="Toggle layout"><span class="toggle-grid active">▦</span><span class="toggle-list">☰</span></button><button class="more-button" id="moreButton" title="More options">···</button></div></div>
+
+        <article class="album-page" id="albumPage">
+          <div class="album-title"><div><span class="folio-label">FIELD NOTES &nbsp; / &nbsp; NO. 01</span><h2>European<br>circulation</h2><p>Coins gathered along the way.</p></div><div class="album-stamp"><span>COLLECTION</span><strong>01</strong><span>EST. 2024</span></div></div>
+          <div class="coin-grid" id="coinGrid"></div>
+          <footer class="album-footer"><span>COINFOLIO &nbsp;·&nbsp; PERSONAL NUMISMATIC RECORD</span><span>PAGE 01 <i>✳</i></span></footer>
+        </article>
+        <div class="page-footnote"><span class="lock-icon">♧</span> Your collection stays in this browser until inserted into OneNote.</div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><section class="coin-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close-modal" id="closeModal" aria-label="Close">×</button><div class="modal-kicker">COIN DETAILS <span id="modalIndex">/ 01</span></div><h2 id="modalTitle">Add a coin</h2><p class="modal-subtitle">Keep the story and details of this piece together.</p><div class="modal-body"><div class="upload-box" id="uploadBox"><input type="file" id="imageInput" accept="image/*" hidden><div class="upload-placeholder"><span class="upload-symbol">＋</span><strong>Add coin photo</strong><span>Drop an image here or <u>browse files</u></span><small>JPG, PNG or WEBP · up to 10 MB</small></div><img id="imagePreview" alt="Coin preview" hidden></div><div class="fields"><label>Coin name<input id="coinName" placeholder="e.g. 2 Euro — Brandenburg Gate"></label><div class="field-row"><label>Country<input id="coinCountry" placeholder="Germany"></label><label>Year<input id="coinYear" placeholder="2018"></label></div><div class="field-row"><label>Denomination<input id="coinValue" placeholder="2 Euro"></label><label>Mint mark<input id="coinMint" placeholder="A"></label></div><label>Condition<input id="coinCondition" placeholder="e.g. AU · Almost uncirculated"></label><label>Notes<textarea id="coinNotes" rows="3" placeholder="Where you found it, its story, anything worth remembering…"></textarea></label></div></div><div class="modal-footer"><button class="text-button" id="removeCoin">Remove sleeve</button><button class="primary-button" id="saveCoin">Save coin details</button></div></section></div>
+  <div class="toast" id="toast"></div>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
