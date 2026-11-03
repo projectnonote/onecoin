@@ -2,6 +2,6 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xsi:type="TaskPaneApp">
   <Id>64969483-2140-48ed-b254-33d3226692ab</Id><Version>1.0.0.0</Version><ProviderName>Coinfolio</ProviderName><DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Coinfolio — Coin Album"/><Description DefaultValue="Create and manage numismatic album pages in OneNote."/><IconUrl DefaultValue="https://YOUR-GITHUB-USERNAME.github.io/onecoin/assets/icon-32.png"/><HighResolutionIconUrl DefaultValue="https://YOUR-GITHUB-USERNAME.github.io/onecoin/assets/icon-80.png"/><SupportUrl DefaultValue="https://YOUR-GITHUB-USERNAME.github.io/onecoin/"/>
-  <AppDomains><AppDomain>https://YOUR-GITHUB-USERNAME.github.io</AppDomain></AppDomains><Hosts><Host Name="Notebook"/></Hosts><DefaultSettings><SourceLocation DefaultValue="https://YOUR-GITHUB-USERNAME.github.io/onecoin/index.html"/></DefaultSettings>
+  <AppDomains><AppDomain>https://projectnonote.github.io</AppDomain></AppDomains><Hosts><Host Name="Notebook"/></Hosts><DefaultSettings><SourceLocation DefaultValue="https://YOUR-GITHUB-USERNAME.github.io/onecoin/index.html"/></DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
